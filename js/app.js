@@ -10,6 +10,7 @@
  * @returns {Object} object - API Gateway Lambda Proxy Output Format
  * 
  */
+const express = require('express');
 let response;
 
 exports.lambdaHandler =  (event, context, callback) => {
@@ -26,7 +27,7 @@ exports.lambdaHandler =  (event, context, callback) => {
                     connection.query(sqlQuery, function (error, results, fields) {
                         if (error) throw error;
                         results.forEach( (row) => {
-                            console.log(`NOMBRE: ${row.Nombre} CORREO: ${row.Correo}`);
+                            console.log(`NOMBRE: ${row.car} CORREO: ${row.public}`);
                             mensaje=mensaje+" - "+ row.Nombre;
                         });
                     });
@@ -45,3 +46,16 @@ exports.lambdaHandler =  (event, context, callback) => {
         callback (null, err);
     }
 };
+
+
+const app = express();
+app.use(express.json());
+
+//*--------components of the server ---------*/
+//the req res receive the req, res, database and bcrypt 
+//This is called dependecy injection
+app.get('/', (req, res) => { res.send(database.users) })
+app.post('/insert', insert.insertInfo())
+app.post('/register', register.handleRegister(db, bcrypt))
+app.get('/profile/:id', profile.handleProfileGet(db) )
+app.put('/image', image.handleImage(db) )
