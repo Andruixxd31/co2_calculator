@@ -1,4 +1,4 @@
-router.post('/insert', function (req, res) {
-    res.send('Wiki home page');
-})
-  
+function insert(){
+    //have var of impact to show
+    document.getElementById("co2-impact").innerHTML = "co2 impact: 100kg";
+}
