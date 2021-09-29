@@ -1,0 +1,23 @@
+{
+  "name": "carbon_footprint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "js/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andruixxd31/co2_calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andruixxd31/co2_calculator/issues"
+  },
+  "homepage": "https://github.com/Andruixxd31/co2_calculator#readme"
+}
