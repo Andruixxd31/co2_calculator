@@ -15,7 +15,7 @@ async function getData() {
 
 async function insert(e) {
   e.preventDefault();
-  
+
   try {
     var car = parseFloat(document.getElementById("car").value);
     var pbTrans = parseFloat(document.getElementById("public-transport").value);
@@ -41,7 +41,7 @@ async function insert(e) {
     document.getElementById("co2-impact").innerHTML =
       "co2 impact: " + response.total + "kg";
 
-    document.getElementById("footprint").scrollIntoView({behavior: "smooth"});
+    document.getElementById("features").scrollIntoView({behavior: "smooth"});
   } catch (err) {
     console.error(err);
   }
