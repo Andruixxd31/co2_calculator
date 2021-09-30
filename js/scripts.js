@@ -43,6 +43,7 @@ async function insert(e) {
     document.getElementById("co2-impact").innerHTML =
       "co2 impact: " + response.total + "kg";
 
+    document.getElementById("footprint").scrollIntoView({behavior: "smooth"});
   } catch (err) {
     console.error(err);
   }
