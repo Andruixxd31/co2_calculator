@@ -15,22 +15,20 @@ async function getData() {
 
 async function insert(e) {
   e.preventDefault();
-
-  var car = parseFloat(document.getElementById("car").value);
-  var pbTrans = parseFloat(document.getElementById("public-transport").value);
-  var bycicle_walking = parseFloat(
-    document.getElementById("walking-biking").value
-  );
-  var airplane = parseFloat(document.getElementById("air").value);
-
-  var data = {
-    car,
-    public: pbTrans,
-    bycicle_walking,
-    airplane,
-  };
-
+  
   try {
+    var car = parseFloat(document.getElementById("car").value);
+    var pbTrans = parseFloat(document.getElementById("public-transport").value);
+    var bycicle_walking = parseFloat(document.getElementById("walking-biking").value);
+    var airplane = parseFloat(document.getElementById("air").value);
+
+    var data = {
+        car,
+        public: pbTrans,
+        bycicle_walking,
+        airplane,
+    };
+
     var response = await fetch(`${milesEndpoint}miles`, {
       method: "POST",
       body: JSON.stringify(data),
